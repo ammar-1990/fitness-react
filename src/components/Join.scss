@@ -1,0 +1,85 @@
+.join {
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    
+    & .jLeft > p {
+        flex: 1;
+        color: white;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 0;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            height: 5px;
+            width: 30%;
+            background-color: orange;
+            border-radius: 35%;
+            top: -10px;
+            left: 0;
+        }
+    } 
+
+    & .jRight {
+        flex:1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        & >form {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background-color: gray;
+            border-radius: 3px;
+
+            input {
+                border: none;
+                outline: none;
+                background-color: transparent;
+               &::placeholder {
+                color: white;
+               }
+            }
+            button {
+                padding:0.5rem  1rem;
+                color: white;
+                font-weight: bold;
+                background-color: orange;
+                border: 1px solid orange;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .join {
+        flex-direction: column;
+
+        & .jLeft > p {
+            font-size: 1.4rem;
+            text-align: center;
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 2px;
+                width:100%;
+                background-color: orange;
+                border-radius: 35%;
+                top: -20px;
+                left:0;
+            }
+        }
+
+        & .jRight {
+            & form {
+                flex-direction: column;
+            }
+        }
+    }
+}
